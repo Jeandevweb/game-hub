@@ -4,7 +4,7 @@ import { CanceledError } from "axios";
 
 const useGames = () => {
   const [games, setGames] = useState([]);
-  const [error, setError] = useState([]);
+  const [error, setError] = useState("");
 
   useEffect(() => {
     const controller = new AbortController();
