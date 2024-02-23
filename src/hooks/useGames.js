@@ -1,10 +1,15 @@
 import useData from "./useData";
 
-const useGames = (selectedGenre, selectedPlatform) =>
+const useGames = (gameQuery) =>
   useData(
     "/games",
-    { params: { genres: selectedGenre?.id, platforms: selectedPlatform?.id } },
-    [selectedGenre?.id, selectedPlatform?.id]
+    {
+      params: {
+        genres: gameQuery.genres?.id,
+        platforms: gameQuery.platforms?.id,
+      },
+    },
+    [gameQuery]
   );
 
 export default useGames;

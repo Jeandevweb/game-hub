@@ -6,9 +6,11 @@ import { useState } from 'react'
 import PlateformSelector from './components/PlateformSelector'
 
 function App() {
-  const [selectedGenre, setSelectedGenre] = useState(null)
-  const [selectedPlatform, setSelectedPlatform] = useState(null)
-
+ 
+  const [gameQuery, setGameQuery] = useState({
+    genres: null,
+    platforms: null
+  })
 
 
   return (
@@ -29,20 +31,19 @@ function App() {
         <Show above="lg">
           <GridItem area="aside" paddingX={5}>
             <GenresList
-              selectedGenre={selectedGenre}
-              onSelectGenre={(genre) => setSelectedGenre(genre)}
+              gameQuery={gameQuery}
+              onSelectGenre={(genres) => setGameQuery({ ...gameQuery, genres })}
             />
           </GridItem>
         </Show>
         <GridItem area="main">
           <PlateformSelector
-            selectedPlatform={selectedPlatform}
-            onSelectPlatform={(platform) => setSelectedPlatform(platform)}
+            gameQuery={gameQuery}
+            onSelectPlatform={(platforms) =>
+              setGameQuery({ ...gameQuery, platforms })
+            }
           />
-          <GameGrid
-            selectedGenre={selectedGenre}
-            selectedPlatform={selectedPlatform}
-          />
+          <GameGrid gameQuery={gameQuery} />
         </GridItem>
       </Grid>
     </>
