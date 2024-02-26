@@ -5,7 +5,6 @@ import { CanceledError } from "axios";
 const useData = (endpoint, requestConfig, dependencies) => {
   const [data, setData] = useState([]);
   const [error, setError] = useState("");
-
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(

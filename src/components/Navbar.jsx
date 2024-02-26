@@ -1,5 +1,5 @@
-import { HStack, Image, Text } from "@chakra-ui/react";
-import logo from "../assets/web.png";
+import { HStack, Image } from "@chakra-ui/react";
+import logo from "../assets/games.png";
 import ColorModeSwitch from "./ColorModeSwitch";
 import SearchInput from "./SearchInput";
 const Navbar = ({ onSearch }) => {
