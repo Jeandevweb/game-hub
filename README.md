@@ -1,3 +1,3 @@
 # Game hub
 
--React, axios, Chakra UI
+React, axios, Chakra UI, Responsive
